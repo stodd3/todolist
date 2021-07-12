@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>To Do List</title>
+<script src="todo.js"></script>
+  
+</head>
+
+<body>
+
+    <ul id="todoList">
+   <li>Do Homework</li>
+			<li>Grocery Shopping</li>
+			<li>Clean Bathroom</li>
+			<li>Make Dinner</li>
+    </ul>
+  
+ <input type ="text" placeholder="Add new Task" id="newTodo">
+  
+  <button id="add" >Add To Do</button>
+  
+  <script>
+    let list = document.querySelector('#todoList');
+
+let newTask = document.querySelector('#newTodo');
+
+ 
+let button = document.getElementById('add');
+
+function addItem() {
+var li = document.createElement('li');
+  let itemText = newTask.value;
+	li.innerHTML = itemText;
+	list.appendChild(li);
+  document.querySelector('#newTodo').value = ''
+}
+
+button.addEventListener('click', addItem);
+
+
+ul = document.querySelector('#todoList');
+
+ul.addEventListener('click', function(e) {
+  this.removeChild(e.target);
+})
+  </script>
+	</body>
+</body>
+</html> 
